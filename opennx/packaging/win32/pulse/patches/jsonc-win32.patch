@@ -47,3 +47,24 @@ diff -urwN json-c-0.9-orig/printbuf.c json-c-0.9/printbuf.c
    int size;
    char buf[128];
  
+diff -urwN json-c-0.9-orig/json_tokener.c json-c-0.9/json_tokener.c
+--- json-c-0.9-orig/json_tokener.c	2009-07-31 04:10:16.000000000 +0200
++++ json-c-0.9/json_tokener.c	2016-10-01 14:57:19.734168943 +0200
+@@ -117,7 +117,6 @@
+ /* CAW: compliant version of strndup() */
+ char* strndup(const char* str, size_t n)
+ {
+-  if(str) {
+     size_t len = strlen(str);
+     size_t nn = json_min(len,n);
+     char* s = (char*)malloc(sizeof(char) * (nn + 1));
+@@ -129,9 +128,6 @@
+ 
+     return s;
+   }
+-
+-  return NULL;
+-}
+ #endif
+ 
+ 
